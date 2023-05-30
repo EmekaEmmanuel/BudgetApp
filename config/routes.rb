@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :payments
 
   # Commented to prevent defaulting to sign in view to check if signed in or not
   devise_scope :user do
@@ -7,7 +8,6 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
-  resources :transactions
   resources :categories
   resources :users
  
