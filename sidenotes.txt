@@ -399,3 +399,34 @@ end
 <% if can? :read, @post %>
   <%= link_to "View", @post %>
 <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><%= link_to "Users", users_path, class:"td_none" %></li>
+            <li><%= link_to "Recipes", recipes_path, class:"td_none" %></li>
+            <li><%= link_to "Foods", foods_path, class:"td_none" %></li>
+            <li><%= link_to "Public Recipes", public_recipes_path, class:"td_none" %></li>
+            <li><% if user_signed_in? %>
+             <%= button_to ('Sign Out'), destroy_user_session_path, method: :delete, form: {  data: { turbo: :false } }, class:"custom_btn2 td_none" %>
+<% end %></li>
+
+
+
+<li><%= link_to "Wetty", foods_path, class:"td_none" %></li>
