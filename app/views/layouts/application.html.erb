@@ -6,11 +6,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag 'reciperail.css' %>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %> 
+    <%= stylesheet_link_tag 'land.css' %>
+    <%= stylesheet_link_tag 'login.css' %>
+    <%= stylesheet_link_tag 'signup.css' %>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <%= javascript_importmap_tags %>
   </head>
 
@@ -21,7 +23,6 @@
     </div>
     <% end %>
     <%= render 'shared_features/header' %>
-    <%= yield %>
-    <%= render 'shared_features/footer' %>
+    <%= yield %> 
   </body>
 </html>

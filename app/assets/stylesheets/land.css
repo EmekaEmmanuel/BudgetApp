@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.list_style_none {
+    list-style: none;
+}
+
+.td_none {
+    text-decoration: none;
+}
+
+/* LANDING PAGE STYLING */
+
+.landfont1 {
+font-size: 16px;
+color: white;   
+}
+
+.landfont2 {
+font-size: 16px;
+color: gray; 
+}
+
+.land_main {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 80vh;
+}
+
+.land_main_section1 img {
+    width: 125px;
+}
+
+.land_footer {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 20vh;
+} 
+
+.land_footer_listbox {
+    border: none;
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 2px;
+    text-align: center;
+}
+
+.land_footer_listbox li {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    outline: none;
+    
+}
+
+.land_login {
+    background-color: #3573ba ;
+    border-radius: 5px;
+}
+
+.land_signin {
+    background-color:white ;
+    border-radius: 5px;
+}
+

@@ -3,13 +3,18 @@ Rails.application.routes.draw do
 
   # Commented to prevent defaulting to sign in view to check if signed in or not
   devise_scope :user do
-    root 'devise/sessions#new'
+    # root 'devise/sessions#new'
+    root 'splash#index'
     # root "users#index"
   end
+
+  # root 'splash#index'
 
   devise_for :users
   resources :categories
   resources :users
+
+  get '/splash', to: 'splash#index', as: 'splash'
  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

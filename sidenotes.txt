@@ -430,3 +430,128 @@ end
 
 
 <li><%= link_to "Wetty", foods_path, class:"td_none" %></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%= render "devise/shared/links" %>
+
+
+<body class="body">
+    <header class="login_header"> 
+        <nav class="login_nav list_style_none"> 
+                <li><a class="td_none" href="./index.html"><img src="./img/back.svg" alt=""></a> </li>
+                <li><a class="td_none login_font1" href="./register.html">LOGIN</a> </li>
+                <li><a class="td_none login_font2" href="./land.html">Log In</a> </li>
+        </nav>
+    </header>
+
+    <main class="login_main">
+
+        <fieldset class="login_fieldset">
+            <input type="text" placeholder="Email">
+            <input type="text" placeholder="Password"> 
+        </fieldset>
+
+        <p class="login_font3"><a class="td_none login_font3a" href="">Forgot password ?</a> </p>
+        
+    </main> 
+
+</body> 
+
+
+
+
+
+
+
+
+
+<body class="body">
+    <header class="register_header"> 
+        <nav class="register_nav list_style_none"> 
+                <li><a class="td_none" href="./index.html"><%=image_tag 'back.svg'%></a></li>
+                <li><a class="td_none register_font1" href="./register.html">REGISTER</a> </li>
+                <li><a class="td_none register_font2" href="./land.html">Next</a> </li>
+        </nav>
+    </header>
+
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data:{turbo: false}) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field register_fieldset">
+        <%= f.label :name, class:'user_field' %><br />
+        <%= f.text_field :name, autofocus: true, class:'login_email' %>
+    </div>
+      <br>
+
+    <div class="field register_fieldset">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field register_fieldset">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
+
+    <div class="field register_fieldset">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+
+    <div class="actions register_fieldset">
+      <%= f.submit "Sign up", class:"login_input login_footer_fieldset" %>
+    </div>
+
+  <% end %>
+</body> 
+
+
+<%= render "devise/shared/links" %>
+
+
+
+
+
+
+<body class="body">
+    <%# <header class="register_header"> 
+        <nav class="register_nav list_style_none"> 
+                <li><a class="td_none" href="./index.html"><img src="./img/back.svg" alt=""></a> </li>
+                <li><a class="td_none register_font1" href="./register.html">REGISTER</a> </li>
+                <li><a class="td_none register_font2" href="./land.html">Next</a> </li>
+        </nav>
+    </header> %>
+
+    <main class="register_main">
+
+        <fieldset class="register_fieldset">
+            <div> 
+                <label class="file_label"> 
+                    <input type="file" class="inputfile"> 
+                    <span class="file_label_span1"><img src="./img/user.png" alt=""></span>
+                    <span class="register_font3">Upload picture</span>
+                </label> 
+            </div>
+            <input type="text" placeholder="Full name">
+            <input type="text" placeholder="Email"> 
+            <input type="text" placeholder="Password"> 
+        </fieldset> 
+        
+    </main> 
+
+</body> 
