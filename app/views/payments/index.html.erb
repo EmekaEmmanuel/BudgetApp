@@ -1,14 +1,72 @@
-<p style="color: green"><%= notice %></p>
+<body class="body">
+    <header class="home_header">
+        <nav class="home_nav list_style_none">
+            <li><a class="td_none" href="./index.html"><img src="./img/hamburger.png" alt=""></a></li>
+            <li><a class="td_none home_font1" href="./register.html">TRANSACTIONS</a> </li>
+            <li><a class="td_none home_font2" href="./land.html"><img src="./img/search_white.png" alt=""></a></li>
+        </nav>
+    </header>
 
-<h1>Payments</h1>
+     <main class="home_main">
 
-<div id="payments">
-  <% @payments.each do |payment| %>
-    <%= render payment %>
-    <p>
-      <%= link_to "Show this payment", payment %>
-    </p>
-  <% end %>
-</div>
+        <section class="home_section1">
+            <ul class="list_box list_style_none">
+                <li class="home_opacity1"><a href="" class="td_none">Most recent</a></li>
+                <li><a href="" class="td_none home_font1">Most recent</a></li>
+                <li><a href="" class="td_none home_font1">Most ancient</a></li>
+            </ul>
+        </section>
 
-<%= link_to "New payment", new_payment_path %>
+        <section class="home_section2">
+            <article class="home_section2_article">
+                <div class="home_section2_article_box1">
+                    <figure>
+                        <img src="./img/trashbin.png" alt="">
+                    </figure>
+                    <div class="home_section2_article_box1_details">
+                        <p class="home_font2">Mac Donald Food</p>
+                        <p class="home_font2">11 Aug 2015</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="home_font3">$17.00</p>
+                </div>
+            </article>
+            <article class="home_section2_article">
+                <div class="home_section2_article_box1">
+                    <figure>
+                        <img src="./img/trashbin.png" alt="">
+                    </figure>
+                    <div class="home_section2_article_box1_details">
+                        <p class="home_font2">Mac Donald Food</p>
+                        <p class="home_font2">11 Aug 2015</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="home_font3">$17.00</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="home_section3">
+            <button><a class="td_none home_font4" href="">Scan</a></button>
+        </section>
+
+    </main>
+
+  <div id="payments">
+    <% @payments.each do |payment| %>
+      <%= render payment %>
+      <p>
+        <%= link_to "Show this payment", payment %>
+      </p>
+    <% end %>
+  </div>
+
+  <%= link_to "New payment", new_payment_path %>
+
+</body>
+
+
+   
+

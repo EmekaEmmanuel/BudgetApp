@@ -555,3 +555,59 @@ end
     </main> 
 
 </body> 
+
+
+
+
+
+
+
+
+
+  <div>
+    <%= form.label :total, style: "display: block" %>
+    <%= form.number_field :total %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <body class="body">
+    <header class="register_header"> 
+        <nav class="register_nav list_style_none"> 
+                <li><a class="td_none" href="./index.html"><img src="./img/back.svg" alt=""></a> </li>
+                <li><a class="td_none register_font1" href="./register.html">CATEGORY</a> </li>
+                <li><a class="td_none register_font2" href="./land.html">Next</a> </li>
+        </nav>
+    </header>
+
+    <main class="register_main">
+
+        <fieldset class="register_fieldset">
+            <div> 
+                <label class="file_label"> 
+                    <input type="file" class="inputfile"> 
+                    <span class="file_label_span1"><img src="./img/user.png" alt=""></span>
+                    <span class="register_font3">Upload picture</span>
+                </label> 
+            </div>
+            <input type="text" placeholder="Name"> 
+        </fieldset>  
+        
+    </main> 
+
+</body> 
