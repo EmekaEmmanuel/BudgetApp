@@ -74,14 +74,14 @@ display: flex;
 gap: 20px;
 align-items: center;
 cursor: pointer;
-position: relative;
+/* position: relative; */
 }
 
 .inputfile { 
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
+	/* opacity: 0; */
+	/* overflow: hidden; */
+	/* position: absolute; */
+	/* z-index: -1; */
 }
 
 .file_label_span1 {
@@ -96,4 +96,14 @@ position: relative;
 
 .icon_box {
    padding: 15px; 
+}
+
+.tac {
+    text-align: center;
+}
+
+.sign_out_btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
 }

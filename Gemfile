@@ -82,3 +82,8 @@ gem 'devise'
 gem 'cancancan'
 
 gem 'rack-cors'
+
+gem 'cloudinary'
+
+gem 'ffi', '~> 1.15.0'
+

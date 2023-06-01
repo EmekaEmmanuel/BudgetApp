@@ -1,10 +1,43 @@
-<p style="color: green"><%= notice %></p>
 
-<%= render @category %>
+<body class="body">
+    <header class="details_header"> 
+        <nav class="details_nav list_style_none"> 
+                <li><a class="td_none" href="">
+                <%=image_tag 'back.svg'%></a></li>
+                <li><a class="td_none details_font1" href="">CATEGORY</a> </li>
+                <li><%= button_to ('Log Out'), destroy_user_session_path, method: :delete, form: {  data: { turbo: :false } }, class:"sign_out_btn register_font2 td_none" %></li>
+        </nav>
+    </header>
 
-<div>
-  <%= link_to "Edit this category", edit_category_path(@category) %> |
-  <%= link_to "Back to categories", categories_path %>
+    <main class="details_main"> 
 
-  <%= button_to "Destroy this category", @category, method: :delete %>
-</div>
+       <section class="details_section1">
+
+        <article class="details_section1_article">
+            <div class="details_section1_article_box1">
+                <div class="details_section1_article_box1_details">
+                    <p class="details_font2"><%= @category.name %></p> 
+                </div>
+            </div> 
+
+            <div class="details_box1">
+                <p class="details_font3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate cupiditate laborum molestias quo omnis laudantium hic quod quaerat labore? Cum doloribus minus illum ad! Nisi quod fuga omnis consequuntur deleniti.</p> 
+            </div>   
+
+            <div class="details_box1 tac">
+                 <figure>
+                    <%=image_tag @category.icon%> 
+                    </figure>
+            </div> 
+        
+        </article>
+        
+       </section>
+
+         <section class="home_section3">
+            <button> <%= link_to "New Transaction", new_category_payment_path(@category), class:"td_none home_font4", data:{turbo: false} %>  </button>
+        </section>
+        
+    </main> 
+
+</body>

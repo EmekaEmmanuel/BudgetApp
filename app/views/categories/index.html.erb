@@ -1,14 +1,53 @@
-<p style="color: green"><%= notice %></p>
+<body class="body">
+    <header class="home_header">
+        <nav class="home_nav list_style_none">
+            <li><a class="td_none" href="./index.html"> <%=image_tag 'hamburger.png'%></a></li>
+            <li><a class="td_none home_font1" href="./register.html">CATEGORIES</a> </li> 
+            <li>
+            <%= button_to ('Sign Out'), destroy_user_session_path, method: :delete, form: {  data: { turbo: :false } }, class:"sign_out_btn register_font2 td_none" %>
+        
+            </li>
+        </nav>
+    </header>
 
-<h1>Categories</h1>
+     <main class="home_main">
 
-<div id="categories">
-  <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
-  <% end %>
-</div>
+        <%# <section class="home_section1">
+            <ul class="list_box list_style_none">
+                <li class="home_opacity1"><a href="" class="td_none">Most recent</a></li>
+                <li><a href="" class="td_none home_font1">Most recent</a></li>
+                <li><a href="" class="td_none home_font1">Most ancient</a></li>
+            </ul>
+        </section> %>
 
-<%= link_to "New category", new_category_path %>
+        <section class="home_section2">
+      <% @categories.each do |category| %> 
+
+
+            <article class="home_section2_article">
+                <div class="home_section2_article_box1">
+                    <figure>
+                    <%=image_tag category.icon%> 
+                    </figure>
+                    <div class="home_section2_article_box1_details">
+                        <p class="home_font2"><%= category.name %></p>
+                        <p class="home_font2">11 Aug 2015</p>
+                    </div>
+                </div>
+                <div>
+                    <%= link_to "Show this category", category, class:"home_font3 td_none", data:{turbo: false} %>
+                </div>
+            </article>
+
+      <% end %> 
+
+        </section>
+
+        <section class="home_section3">
+            <button> <%= link_to "New category", new_category_path, class:"td_none home_font4" %>  </button>
+        </section>
+
+    </main>
+
+</body>
+

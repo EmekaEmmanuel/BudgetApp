@@ -1,44 +1,30 @@
 Rails.application.routes.draw do
   resources :payments
 
-  # Commented to prevent defaulting to sign in view to check if signed in or not
-  devise_scope :user do
-    # root 'devise/sessions#new'
-    root 'splash#index'
-    # root "users#index"
-  end
+  # Commented to allow defaulting routing to splash index
+  # devise_scope :user do
+  #   # root 'devise/sessions#new'  
+  # end
 
-  # root 'splash#index'
-
-  devise_for :users
-  resources :categories
-  resources :users
+  root 'splash#index' 
+  devise_for :users 
 
   get '/splash', to: 'splash#index', as: 'splash'
- 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
-
-  # namespace :api, defaults: { format: :json } do
-  #   namespace :v1 do
-  #     resources :recipes
+  resources :users, only: [:index, :show]
+      resources :categories do
+        resources :payments
+    end
     
-  #     resources :recipe_foods
-  
-  #     resources :public_recipes
-  
-  #     resources :foods, except: [:update]
-  
-  #     resources :recipes, only: [:index, :show, :new, :create, :destroy] do
-  #       resources :recipe_foods, only: [:new, :create, :destroy, :update, :edit]
-  #     end
-  
-  #     resources :users, only: [:index, :show]
 
-  #     get '/shopping_list', to: 'shopping_list#index', as: 'shopping_list'
-  #   end
-  # end
+  # Defines the api routes
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+       resources :users, only: [:index, :show]
+      resources :categories do
+        resources :payments
+    end
+    end
+  end
 
 end

@@ -1,9 +1,10 @@
 <body class="body">
     <header class="details_header"> 
         <nav class="details_nav list_style_none"> 
-                <li><a class="td_none" href="./index.html"><img src="./img/back.svg" alt=""></a></li>
-                <li><a class="td_none details_font1" href="./register.html">DETAILS</a> </li>
-                <li class="details_opacity1"><a class="td_none home_font2" href="./land.html"><img src="./img/search_white.png" alt=""></a></li>
+                <li><a class="td_none" href="">
+                <%=image_tag 'back.svg'%></a></li>
+                <li><a class="td_none details_font1" href="">DETAILS</a> </li>
+                <li><%= button_to ('Sign Out'), destroy_user_session_path, method: :delete, form: {  data: { turbo: :false } }, class:"sign_out_btn register_font2 td_none" %></li>
         </nav>
     </header>
 
@@ -13,10 +14,13 @@
         <article class="details_section1_article">
             <div class="details_section1_article_box1">
                 <figure>
-                    <img src="./img/trashbin.png" alt="">
-                </figure>
-                <div class="details_section1_article_box1_details">
-                    <p class="details_font2">Mac Donald Food</p> 
+                    <% @payment.categories.each do |key| %> 
+                    <%=image_tag key.icon%>
+                    <%end%>
+                </figure> 
+            </div>
+            <div class="details_section1_article_box1_details">
+                    <p class="details_font2"><%= @payment.name %></p> 
                 </div>
             </div> 
 
@@ -25,19 +29,28 @@
             </div> 
 
             <div class="details_box2">
-                <p class="details_font3 details_font4">Transaction N2525415462.</p>
-                <p class="details_font5">11 Aug 2015 at 3:00pm</p>
+                <p class="details_font3 details_font4">Transaction N000<%= @payment.id %>.</p>
+                <p class="details_font5">
+                <%=@payment.created_at.strftime('%d %B %Y')%>
+                </p>
             </div>
 
             <div class="details_box3">
-                <p class="details_font3 details_font4">TOTAL PAYMENT </p> 
-                <p class="details_font3 details_font4">$17.00</p> 
+                <% @payment.categories.each do |key| %> 
+                <p class="details_font3 details_font4">TOTAL PAYMENT </p>              
+                    
+                <p class="details_font3 details_font4">
+                $<%= key.total_category_amount %></p> 
+                <%end%>
             </div>
 
         </article> 
        </section>
         
     </main> 
+
+        <p class="register_font4">
+        <%= link_to 'Back to users', users_path(@category), class:'td_none login_font3a' %></p>
 
 </body>
 
@@ -50,12 +63,3 @@
 
 
 
-
-<%= render @payment %>
-
-<div>
-  <%= link_to "Edit this payment", edit_payment_path(@payment) %> |
-  <%= link_to "Back to payments", payments_path %>
-
-  <%= button_to "Destroy this payment", @payment, method: :delete %>
-</div>
