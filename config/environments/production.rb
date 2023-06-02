@@ -27,14 +27,9 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: 'smtp.elasticemail.com',
     port: 2525,
-    user_name: 'emekaekeohaa@gmail.com'
+    user_name: 'emekaekeohaaelastic@gmail.com'
+    password: '2EFF355B6187287AD7EE9A2DA9D32A980315'
   }
-
-
-
-
-
-
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
