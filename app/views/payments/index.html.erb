@@ -30,7 +30,7 @@
                     </figure>
                     <div class="home_section2_article_box1_details">
                         <p class="home_font2"><%= link_to payment.name, payment, class:"td_none home_font2" %></p>
-                        <p class="home_font2">11 Aug 2015</p>
+                        <p class="home_font2"><%=payment.created_at.strftime('%d %B %Y')%></p>
                     </div>
                 </div>
                 <div>

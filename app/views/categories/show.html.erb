@@ -1,4 +1,3 @@
-
 <body class="body">
     <header class="details_header"> 
         <nav class="details_nav list_style_none"> 
@@ -15,6 +14,12 @@
 
         <article class="details_section1_article">
             <div class="details_section1_article_box1">
+                <div class="details_section1_article_box1">  
+                    <figure>
+                        <%=image_tag @category.icon%>
+                    </figure>  
+                </div>
+
                 <div class="details_section1_article_box1_details">
                     <p class="details_font2"><%= @category.name %></p> 
                 </div>
@@ -22,14 +27,21 @@
 
             <div class="details_box1">
                 <p class="details_font3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate cupiditate laborum molestias quo omnis laudantium hic quod quaerat labore? Cum doloribus minus illum ad! Nisi quod fuga omnis consequuntur deleniti.</p> 
-            </div>   
-
-            <div class="details_box1 tac">
-                 <figure>
-                    <%=image_tag @category.icon%> 
-                    </figure>
             </div> 
-        
+
+            <div class="details_box2">
+                <p class="details_font3 details_font4">Transaction N000<%= @category.id %>.</p>
+                <p class="details_font5">
+                <%=@category.created_at.strftime('%d %B %Y')%>
+                </p>
+            </div>
+
+            <div class="details_box3"> 
+                <p class="details_font3 details_font4">TOTAL PAYMENT </p>              
+                    
+                <p class="details_font3 details_font4"> $<%= @category.total_category_amount %></p>  
+            </div>  
+ 
         </article>
         
        </section>

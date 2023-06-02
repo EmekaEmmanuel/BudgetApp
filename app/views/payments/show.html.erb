@@ -13,11 +13,11 @@
        <section class="details_section1">
         <article class="details_section1_article">
             <div class="details_section1_article_box1">
+                <% @payment.categories.each do |key| %> 
                 <figure>
-                    <% @payment.categories.each do |key| %> 
                     <%=image_tag key.icon%>
-                    <%end%>
                 </figure> 
+                <%end%>
             </div>
             <div class="details_section1_article_box1_details">
                     <p class="details_font2"><%= @payment.name %></p> 
@@ -35,13 +35,10 @@
                 </p>
             </div>
 
-            <div class="details_box3">
-                <% @payment.categories.each do |key| %> 
+            <div class="details_box3"> 
                 <p class="details_font3 details_font4">TOTAL PAYMENT </p>              
                     
-                <p class="details_font3 details_font4">
-                $<%= key.total_category_amount %></p> 
-                <%end%>
+                <p class="details_font3 details_font4"> $<%= @payment.amount %></p>  
             </div>
 
         </article> 

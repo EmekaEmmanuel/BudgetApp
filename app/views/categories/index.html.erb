@@ -12,14 +12,6 @@
 
      <main class="home_main">
 
-        <%# <section class="home_section1">
-            <ul class="list_box list_style_none">
-                <li class="home_opacity1"><a href="" class="td_none">Most recent</a></li>
-                <li><a href="" class="td_none home_font1">Most recent</a></li>
-                <li><a href="" class="td_none home_font1">Most ancient</a></li>
-            </ul>
-        </section> %>
-
         <section class="home_section2">
       <% @categories.each do |category| %> 
 
@@ -30,12 +22,12 @@
                     <%=image_tag category.icon%> 
                     </figure>
                     <div class="home_section2_article_box1_details">
-                        <p class="home_font2"><%= category.name %></p>
-                        <p class="home_font2">11 Aug 2015</p>
+                        <p class="home_font2"><%= link_to category.name, category, class:"home_font2 td_none", data:{turbo: false} %>     </p>
+                        <p class="home_font2"><%=category.created_at.strftime('%d %B %Y')%></p>
                     </div>
                 </div>
                 <div>
-                    <%= link_to "Show this category", category, class:"home_font3 td_none", data:{turbo: false} %>
+                    <%= link_to category.total_category_amount, category, class:"home_font3 td_none", data:{turbo: false} %>
                 </div>
             </article>
 
