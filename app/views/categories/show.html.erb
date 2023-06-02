@@ -29,12 +29,14 @@
                 <p class="details_font3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate cupiditate laborum molestias quo omnis laudantium hic quod quaerat labore? Cum doloribus minus illum ad! Nisi quod fuga omnis consequuntur deleniti.</p> 
             </div> 
 
+            <% @category.payments.each do |paye| %> 
             <div class="details_box2">
-                <p class="details_font3 details_font4">Transaction N000<%= @category.id %>.</p>
+                <p class="details_font3 details_font4">Transaction N000<%= paye.id %>.</p>
                 <p class="details_font5">
-                <%=@category.created_at.strftime('%d %B %Y')%>
+                <%=paye.created_at.strftime('%d %B %Y')%>
                 </p>
             </div>
+              <% end %> 
 
             <div class="details_box3"> 
                 <p class="details_font3 details_font4">TOTAL PAYMENT </p>              
