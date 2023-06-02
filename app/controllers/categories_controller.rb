@@ -1,9 +1,15 @@
 class CategoriesController < ApplicationController
+  load_and_authorize_resource
+  before_action :authenticate_user!
   before_action :set_category, only: %i[show edit update destroy]
 
   # GET /categories or /categories.json
   def index
-    @categories = Category.all
+    @categories = Category.all.includes(:user).order(created_at: :desc).filter { |catego| catego.user_id == current_user.id }
+    respond_to do |format|
+      format.html
+      format.json { render json: @categories, status: 200 }
+    end
   end
 
   # GET /categories/1 or /categories/1.json
@@ -11,24 +17,23 @@ class CategoriesController < ApplicationController
 
   # GET /categories/new
   def new
-    @category = Category.new
+    @category = current_user.categories.new
   end
 
   # GET /categories/1/edit
   def edit; end
 
-  # POST /categories or /categories.json
   def create
-    @category = Category.new(category_params)
+    if params[:category][:icon].present?
+      uploaded_file = params[:category][:icon].tempfile
+      cloudinary_response = Cloudinary::Uploader.upload(uploaded_file.path, folder: 'budgeat')
+      @category = current_user.categories.new(category_params.merge(user_id: current_user.id, icon: cloudinary_response['secure_url']))
+    end
 
-    respond_to do |format|
-      if @category.save
-        format.html { redirect_to category_url(@category), notice: 'Category was successfully created.' }
-        format.json { render :show, status: :created, location: @category }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
-      end
+    if @category.save
+      redirect_to categories_url, notice: 'Categories created successfully'
+    else
+      render :new
     end
   end
 
@@ -64,6 +69,7 @@ class CategoriesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def category_params
-    params.require(:category).permit(:name, :icon, :total, :user_id)
+    # params.require(:category).permit(:name, :icon, :total, :user_id)
+    params.require(:category).permit(:name, :icon, :user_id)
   end
 end

@@ -1,13 +1,28 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
-  # GET /users or /users.json
   def index
-    @users = User.all
+    @users = current_user
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @users, status: 200 }
+    end
   end
 
-  # GET /users/1 or /users/1.json
-  def show; end
+  def show
+    if params[:id] == 'sign_out'
+      sign_out current_user
+      redirect_to new_user_session_path, notice: 'Sign out succesfully' unless @user
+    else
+      @user = User.find_by(id: params[:id])
+      respond_to do |format|
+        format.html { redirect_to users_path, notice: 'User found' unless @user }
+        format.json { render json: @user, status: 200 }
+      end
+    end
+  end
 
   # GET /users/new
   def new
