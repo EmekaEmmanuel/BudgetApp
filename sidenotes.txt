@@ -205,3 +205,6 @@ rails generate migration create_transaction_categories category_id:bigint
 rails g migration CreateCategoriesPayments category:references payment:references 
 
 
+<%= link_to root_path do %>
+  <%= image_tag "your_image_path.jpg", alt: "Image description" %>
+<% end %>
