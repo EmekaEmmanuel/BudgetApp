@@ -8,5 +8,4 @@ class User < ApplicationRecord
   has_many :payments, foreign_key: :user_id, dependent: :delete_all
 
   validates :name, presence: true, length: { maximum: 50 }
-  
 end

@@ -1,3 +1,2 @@
-class SplashController < ApplicationController 
-    
+class SplashController < ApplicationController
 end

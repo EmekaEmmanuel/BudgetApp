@@ -696,9 +696,7 @@ rails g migration CreateCategoriesPayments category:references payment:reference
 
 
 
-
-
- Prefix Verb   URI Pattern                                                                                       Controller#Action
+   Prefix Verb   URI Pattern                                                                                       Controller#Action
                                 payments GET    /payments(.:format)                                                                               payments#index
                                          POST   /payments(.:format)                                                                               payments#create
                              new_payment GET    /payments/new(.:format)                                                                           payments#new
@@ -793,12 +791,6 @@ rails_conductor_inbound_email_incinerate POST   /rails/conductor/action_mailbox/
                       rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                                       active_storage/disk#show
                update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                               active_storage/disk#update
                     rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                                    active_storage/direct_uploads#create
-PS C:\Users\hp\Desktop\microverse_drive\module5\week5\budgetapp>
-
-
-
-
-
 
 
 

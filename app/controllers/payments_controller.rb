@@ -14,8 +14,7 @@ class PaymentsController < ApplicationController
     end
   end
 
-  def show;
-  end
+  def show; end
 
   # GET /payments/new
   def new
@@ -32,9 +31,9 @@ class PaymentsController < ApplicationController
     params[:categories].each do |key|
       @payment.categories << Category.find_by(id: key)
     end
-    puts params[:categories] 
+    puts params[:categories]
     if @payment.save
-      # Go back to route 
+      # Go back to route
       redirect_to category_payments_path(params[:category_id]), notice: 'Payment successful.'
     else
       render :new, status: :unprocessable_entity

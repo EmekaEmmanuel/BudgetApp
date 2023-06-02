@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_category, only: %i[show edit update destroy]
 
-  # GET /categories or /categories.json 
+  # GET /categories or /categories.json
   def index
     @categories = Category.all.includes(:user).order(created_at: :desc).filter { |catego| catego.user_id == current_user.id }
     respond_to do |format|
@@ -17,19 +17,19 @@ class CategoriesController < ApplicationController
 
   # GET /categories/new
   def new
-    @category = current_user.categories.new 
+    @category = current_user.categories.new
   end
 
   # GET /categories/1/edit
   def edit; end
- 
+
   def create
     if params[:category][:icon].present?
       uploaded_file = params[:category][:icon].tempfile
       cloudinary_response = Cloudinary::Uploader.upload(uploaded_file.path, folder: 'budgeat')
-      @category = current_user.categories.new(category_params.merge(user_id: current_user.id, icon: cloudinary_response['secure_url'])) 
+      @category = current_user.categories.new(category_params.merge(user_id: current_user.id, icon: cloudinary_response['secure_url']))
     end
-    
+
     if @category.save
       redirect_to categories_url, notice: 'Categories created successfully'
     else
@@ -73,7 +73,3 @@ class CategoriesController < ApplicationController
     params.require(:category).permit(:name, :icon, :user_id)
   end
 end
-
-
-
-

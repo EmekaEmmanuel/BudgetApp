@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  belongs_to :user, foreign_key: 'user_id' 
+  belongs_to :user, foreign_key: 'user_id'
   has_and_belongs_to_many :payments
   # has_many :payments, through :tablename
 

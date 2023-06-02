@@ -1,3 +1,2 @@
-class SplashController < ApplicationController 
-    
+class Api::V1::SplashController < ApplicationController
 end

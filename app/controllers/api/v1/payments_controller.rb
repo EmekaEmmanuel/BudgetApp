@@ -1,4 +1,4 @@
-class PaymentsController < ApplicationController
+class Api::V1::PaymentsController < ApplicationController
   load_and_authorize_resource
   before_action :authenticate_user!
   before_action :set_payment, only: %i[show edit update destroy]
@@ -9,12 +9,17 @@ class PaymentsController < ApplicationController
     @payments = @category.payments.order(created_at: :desc)
 
     respond_to do |format|
-      format.html
-      format.json { render json: @payments, status: 200 }
+      format.json { render json: [@payments, @category], status: 200 }
     end
   end
 
-  def show;
+  def show
+    @category = Category.find(params[:category_id])
+    @payment = Payment.find(params[:payment_id])
+
+    respond_to do |format|
+      format.json { render json: [@payment, @category], status: 200 }
+    end
   end
 
   # GET /payments/new
@@ -32,12 +37,15 @@ class PaymentsController < ApplicationController
     params[:categories].each do |key|
       @payment.categories << Category.find_by(id: key)
     end
-    puts params[:categories] 
+    puts params[:categories]
     if @payment.save
-      # Go back to route 
-      redirect_to category_payments_path(params[:category_id]), notice: 'Payment successful.'
+      respond_to do |format|
+        format.json { render json: @payment, status: :created }
+      end
     else
-      render :new, status: :unprocessable_entity
+      respond_to do |format|
+        format.json { render json: @payment.errors, status: :unprocessable_entity }
+      end
     end
   end
 
