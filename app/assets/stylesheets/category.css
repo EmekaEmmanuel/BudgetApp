@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.list_style_none {
+  list-style: none;
+}
+
+.td_none {
+  text-decoration: none;
+}
+
+.register_header {
+  background-color: #3573ba;
+}
+
+.register_nav {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.register_nav img {
+  width: 20px;
+}
+
+.register_font1 {
+  color: white;
+}
+
+.register_font2 {
+  color: white;
+  font-size: 14px;
+}
+
+.register_font3 {
+  text-align: center;
+  align-items: center;
+  font-size: 13px;
+}
+
+.register_font3a {
+  color: gray;
+}
+
+.register_fieldset {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+.register_fieldset input {
+  padding: 8px;
+  width: 100%;
+  border: 0.5px solid rgb(226, 221, 221);
+  outline: none;
+}
+
+/* FILE UPLOAD STYLING */
+.file_label {
+  padding: 8px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  cursor: pointer;
+
+  /* position: relative; */
+}
+
+.file_label_span1 {
+  border-radius: 50%;
+  background-color: gray;
+  padding: 5px;
+}
+
+.file_label img {
+  width: 30px;
+}
+
+.icon_box {
+  padding: 15px;
+}
+
+.tac {
+  text-align: center;
+}
+
+.sign_out_btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}

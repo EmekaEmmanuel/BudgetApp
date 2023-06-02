@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Budgetapp</title>
+    <title>Budgeat</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %> 
+    <%= stylesheet_link_tag 'land.css' %>
+    <%= stylesheet_link_tag 'login.css' %>
+    <%= stylesheet_link_tag 'signup.css' %>
+    <%= stylesheet_link_tag 'payment.css' %>
+    <%= stylesheet_link_tag 'details.css' %>
+    <%= stylesheet_link_tag 'home.css' %>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+   <% flash.each do |key, message| %>
+    <div class="flash-message">
+      <%= message %>
+    </div>
+    <% end %>
+    <%= render 'shared_features/header' %>
+    <%= yield %> 
   </body>
 </html>

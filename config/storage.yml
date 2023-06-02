@@ -1,10 +1,17 @@
-test:
-  service: Disk
-  root: <%= Rails.root.join("tmp/storage") %>
+cloudinary:
+  service : Cloudinary
+  config.cloud_name : 'drhbncewu'
+  config.api_key : '262778235691582'
+  config.api_secret : 'vlLrLaqdd5ggUXJsnawfdOD6CvM'
+  config.secure : true
 
-local:
-  service: Disk
-  root: <%= Rails.root.join("storage") %>
+# test:
+#   service: Disk
+#   root: <%= Rails.root.join("tmp/storage") %>
+
+# local:
+#   service: Disk
+#   root: <%= Rails.root.join("storage") %>
 
 # Use bin/rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
@@ -32,3 +39,18 @@ local:
 #   service: Mirror
 #   primary: local
 #   mirrors: [ amazon, google, microsoft ]
+
+production:
+  service: Cloudinary
+  enhance_image_tag: true
+  static_image_support: true 
+
+development:
+  service: Cloudinary
+  enhance_image_tag: true
+  static_image_support: true 
+
+test:
+  service: Cloudinary
+  enhance_image_tag: true
+  static_image_support: true
