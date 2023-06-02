@@ -1,10 +1,6 @@
  <%= render category %>
 
 
-
-
-
-
 rails g scaffold User name:string 
 rails g scaffold Category name:string icon:string total:integer user:references
 rails g scaffold Transaction name:string amount:integer category:references user:references
@@ -68,16 +64,6 @@ class CreateRecipeFoods < ActiveRecord::Migration[7.0]
     end
   end
 end
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -160,34 +146,11 @@ Comment.create(post: first_post, author: fourth_user, text: 'Hi Sultry Bolaji!' 
 User.where(name:'emeka').destroy_all
 
 
-
-
-
 # devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
-
-
-    
-
-
-
-
 
 
 
   # already_authenticated: "You are already signed in."
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -207,26 +170,12 @@ User.where(name:'emeka').destroy_all
 
 
 
-
-
-
-
-
-
-
-
-
 <% if can? :read, @post %>
   <%= link_to "View", @post %>
 <% end %>
 
 
-
-
 <%= render "devise/shared/links" %>
-
-
-
 
 
 # Cloudinary::Uploader.upload("sample.jpg", :use_filename => true, :folder => "folder1/folder2")
@@ -247,10 +196,6 @@ User.where(name:'emeka').destroy_all
 
 
 
-
-
-
-
 rails generate migration CreatePaymentCategories payment:references category:references 
 
 rails generate migration create_transaction_categories category_id:bigint
@@ -258,12 +203,5 @@ rails generate migration create_transaction_categories category_id:bigint
 
 
 rails g migration CreateCategoriesPayments category:references payment:references 
-
-
-
-
-
-
-
 
 
