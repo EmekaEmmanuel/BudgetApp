@@ -11,6 +11,30 @@ Rails.application.configure do
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
+  config.secret_key_base = ENV["SECRET_KEY_BASE"]
+
+
+
+  # config.eager_load = true
+  # config.secret_key_base = ENV["SECRET_KEY_BASE"]
+  # Full error reports are disabled and caching is turned on.
+  config.action_mailer.default_url_options = { host: 'https://budgeat.onrender.com' }
+  # config.consider_all_requests_local       = false
+  # config.action_controller.perform_caching = true
+
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.elasticemail.com',
+    port: 2525,
+    user_name: 'emekaekeohaa@gmail.com'
+  }
+
+
+
+
+
+
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
@@ -22,7 +46,7 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-  config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?
+  config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present? || ENV['RENDER'].present?
 
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
