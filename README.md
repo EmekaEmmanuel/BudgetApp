@@ -6,6 +6,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+    - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -20,7 +21,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Reciperails <a name="about-project"></a>
+# 📖 BudgetApp <a name="about-project"></a>
 
 > The app keeps track of all recipes, ingredients, and inventory. It allows to save ingredients, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking it allows you to make them public so anyone can access them.
 
@@ -43,6 +44,18 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](https://emekaemmanuel.github.io/BudgetApp) 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Project Presentation <a name="project-presentation"></a>
+
+- [Project Presentation video link](https://www.loom.com/share/c857f62ec5be457cbb32472cea3520c2)   
+
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -56,8 +69,8 @@ In order to run this project you need installed Ruby, Postgres, rails on your lo
 Clone this repository to your local machine:
 
 ```sh
-  git clone https://github.com/EmekaEmmanuel/Reciperails.git
-  cd Reciperails
+  git clone https://github.com/EmekaEmmanuel/BudgetApp.git
+  cd BudgetApp
 
 ```
 
@@ -73,17 +86,11 @@ To run the project, execute the following command in terminal:
 
 ## 👥 Authors <a name="author"></a>
 
-
 👤 **Emeka Emmanuel Ugboaja**
 
 - GitHub: [EmekaEmmanuel](https://github.com/EmekaEmmanuel)
 - Twitter: [@emekaekeoha](https://twitter.com/emekaekeoha)
 - LinkedIn: [emeka-ugboaja](https://www.linkedin.com/in/emeka-ugboaja) 
-
-👤 **Tekhlay B.**
-
-- Github [@Tekhlay](https://github.com/Tekhlay) 
-- LinkedIn [Tekhlay](https://www.linkedin.com/in/tekhlay/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -101,7 +108,7 @@ To run the project, execute the following command in terminal:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/EmekaEmmanuel/Reciperails/issues).
+Feel free to check the [issues page](https://github.com/EmekaEmmanuel/BudgetApp/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -117,7 +124,8 @@ Give a ⭐️ if you like this project!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-we would like to thank microverse community for the support and guidance.
+Thank you microverse community for the support and guidance.
+Thank you Gregoire Vella on Behance for the Awesome Design Template.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
