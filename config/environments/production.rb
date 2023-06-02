@@ -27,7 +27,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: 'smtp.elasticemail.com',
     port: 2525,
-    user_name: 'emekaekeohaaelastic@gmail.com'
+    user_name: 'emekaekeohaaelastic@gmail.com',
     password: '2EFF355B6187287AD7EE9A2DA9D32A980315'
   }
 
