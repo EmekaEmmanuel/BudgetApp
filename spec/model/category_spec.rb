@@ -5,7 +5,6 @@ RSpec.describe Category, type: :model do
     @user = User.create(name: 'Emeka Emmannuel', email: 'emekaekeohaa@gmail.com', password: '123456')
 
     @category = Category.new(name: 'Food', icon: 'http://foodicon.com', user_id: @user.id)
-
   end
 
   it 'is valid with valid attributes' do

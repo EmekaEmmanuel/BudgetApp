@@ -5,7 +5,7 @@ RSpec.describe Payment, type: :model do
     @user = User.create(name: 'Emeka Emmannuel', email: 'emekaekeohaa@gmail.com', password: '123456')
 
     @category = Category.create(name: 'Food', icon: 'http://foodicon.com', user_id: @user.id)
-    
+
     @payment = Payment.create(name: 'Rice', amount: 50, user_id: @user.id)
   end
 

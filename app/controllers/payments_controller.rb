@@ -14,7 +14,10 @@ class PaymentsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @category = Category.find(params[:category_id]) 
+    @payment = Payment.find_by(id: params[:id])
+  end
 
   # GET /payments/new
   def new
