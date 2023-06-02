@@ -14,7 +14,7 @@ class Api::V1::PaymentsController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:category_id]) 
+    @category = Category.find(params[:category_id])
     @payment = Payment.find_by(id: params[:id])
 
     respond_to do |format|

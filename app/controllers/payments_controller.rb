@@ -14,7 +14,7 @@ class PaymentsController < ApplicationController
     end
   end
 
-  def show 
+  def show
     @payment = Payment.find_by(id: params[:id])
   end
 

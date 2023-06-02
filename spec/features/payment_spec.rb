@@ -6,7 +6,7 @@ RSpec.describe 'Current User Payments', type: :feature do
   end
 
   before(:each) do
-    visit users_path 
+    visit users_path
     @user = User.create(name: 'Emeka Emmannuel', email: 'emekaekeohaa@gmail.com', password: '123456')
     if page.current_path == new_user_session_path
       fill_in 'Email', with: @user.email
@@ -18,31 +18,27 @@ RSpec.describe 'Current User Payments', type: :feature do
   end
 
   describe 'Payment index page' do
-
-    scenario 'should show payment name in payment index page' do 
-      visit category_payments_path(@category) 
+    scenario 'should show payment name in payment index page' do
+      visit category_payments_path(@category)
       expect(page).to have_content('TRANSACTIONS')
     end
 
     scenario 'should have an category payment total' do
-      visit category_payments_path(@category) 
-      expect(page).to have_content('Recent')  
-    end  
+      visit category_payments_path(@category)
+      expect(page).to have_content('Recent')
+    end
 
     scenario 'should have an category payment total' do
-      visit category_payments_path(@category) 
-      expect(page).to have_content('Ancient')  
-    end  
-
+      visit category_payments_path(@category)
+      expect(page).to have_content('Ancient')
+    end
   end
 
   describe 'New Payment page' do
     scenario 'should have a form for new payment' do
       visit users_path
-      visit new_category_payment_path(@category) 
+      visit new_category_payment_path(@category)
       expect(page).to have_content('NEW PAYMENTS')
     end
   end
-   
-
-  end
+end
